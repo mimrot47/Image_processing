@@ -4,7 +4,7 @@ import numpy as np
 
 
 def get_filtered_images(image,action):
-    print(image)
+    
     if len(action)==0:
         filtered=image
     img=cv2.cvtColor(image,cv2.COLOR_BGR2RGB)
