@@ -26,9 +26,9 @@ STATIC_DIR=BASE_DIR/'static'
 SECRET_KEY = '#es+iq!dswovk93&q4h3x8#xieit7+gx2scw2fx(@br^grl8wr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["imageprocess47.herokuapp.com","localhost"]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
