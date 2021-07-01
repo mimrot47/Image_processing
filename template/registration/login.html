@@ -1,0 +1,63 @@
+{% extends '../base.html' %}
+{% block rk %}
+{% comment %} {{ form.as_p }} {% endcomment %}
+<br>
+<br>
+<div class="container px-4 mt-5">
+  <div class="row gx-5">
+    <div class="col">
+     <div class="p-3 border">
+     <h5 class="alert alert-info" >Global Data</h5>
+     Total Case :{{word_data.Global.TotalConfirmed}}
+     <br>
+     New Case : {{word_data.Global.NewConfirmed}}
+     <br>
+     Total Recovered : {{word_data.Global.TotalRecovered}}
+     <br>
+     New Recovered : {{word_data.Global.NewRecovered}}
+     <br>
+     Total Deaths : {{word_data.Global.TotalDeaths}}
+     <br>
+     New Deaths : {{word_data.Global.NewDeaths}}
+     <br>
+     <h5 class="alert alert-info mt-4" >Indias Data</h5>
+      Total Confirmed : {{word_data.Countries.76.TotalConfirmed}}
+      <br>
+      New Confirmed : {{word_data.Countries.76.NewConfirmed}}
+      <br>
+      Total Deaths : {{word_data.Countries.76.TotalDeaths}}
+      <br>
+      New Deaths : {{word_data.Countries.76.NewDeaths}}
+      <br>
+     Total Recovered : {{word_data.Countries.76.TotalRecovered}}
+      <br>
+      New Recovered : {{word_data.Countries.76.NewRecovered}}
+      <br>
+      {% comment %} <h5 class="alert alert-info mt-4" >Indias Data</h5>
+      Active : {{mhdata.statewise.21.statewise}}
+      <br>
+      Active : {{mhdata.statewise.21.statewise}} {% endcomment %}
+     </div>
+    </div>
+    <div class="col">
+      <div class="p-3 border">
+      <h5 class="alert alert-info mt-4" >Hospital     Data</h5>
+       <form  action="" method="POST" class="p-4" style="color: #757575;">
+          {% csrf_token %}
+            <div class="md-form mt-3">
+                <input type="text" class="form-control" name="username" placeholder="User Name">
+            </div>
+            <br>
+            <div class="md-form">
+                <input type="password" class="form-control" name="password" placeholder="Password">
+            </div> 
+            <div class="text-center">
+            <input type="submit" class="btn btn-outline-primary  z-depth-0 my-4" value="Login"/>
+            </div>
+        </form>
+      
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock rk %}
