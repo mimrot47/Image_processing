@@ -1,3 +1,82 @@
 {% extends '../base.html' %}
 {% block rk %}
+{% block login %}
+<nav class="navbar navbar-expand-lg text-white mt-5 fixed-top text-center" style="background-color: #9966ff;">
+ <div class="container-fluid">
+    <a class="navbar-brand text-white" href="#">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" href="#">Add Pataint</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active text-white" href="#">Update Report</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+      </ul>
+      <span class="navbar-text">
+        <a class="btn btn-warning" href="../accounts/logout">Logout</a>
+      </span>
+    </div>
+  </div>
+</nav>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock login %}
+<div class="container">
+  <form>
+  <table class="table">
+    <tr>
+      <th scope="col">
+        <select class="form-select form-select-sm" aria-label=".form-select-sm example" >
+        <option selected>Search by Ward</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+        </select></th>
+        <th scope="col"><input class="form-control" type="text" name="bed"  placeholder="Search Bed No" /></th>
+      <th scope="col"><input class="form-control" type="text" name="name" placeholder="Search Name" /></th>
+      <th scope="col"><input type="submit" class="btn btn-success" value="Search"></th>
+    </tr>
+  </table>
+  </form>
+</div>
+<div class="container-fluid">
+<table class="table">
+  <thead>
+    <tr class="table-dark">
+      <th scope="col">#</th>
+      <th scope="col">Ward No</th>
+      <th scope="col">Bed No</th>
+      <th scope="col">Name</th>
+      <th scope="col">Dector Name</th>
+      <th scope="col">Covid</th>
+      <th scope="col">Oxigen Level</th>
+      <th scope="col">More Info</th>
+    </tr>
+  </thead>
+  {% if DATA %}
+  {% for D in DATA %}
+   <tr>
+      <td scope="col">{{forloop.counter}}</td>
+      <td scope="col">{{D.ward_no}}</td>
+      <td scope="col">{{D.bed_no}}</td>
+      <td scope="col">{{D.P_name}}</td>
+      <td scope="col">{{D.Dr_name}}</td>
+      <td scope="col">{{D.p_covid}}</td>
+      <td scope="col">{{D.Oxigen_leval}}</td>
+      <td scope="col"><a class="btn btn-info" href="../info/{{D.id}}">All Report</a> </td>
+    </tr>
+    {% endfor %}
+   {% endif %}
+  </table>
+  </div>
 {% endblock rk %}

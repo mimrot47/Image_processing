@@ -28,8 +28,8 @@ class petaint(models.Model):
     p_covid=models.CharField(max_length=50,choices=covid,blank=True)
     P_per=models.IntegerField()
     P_x_image=models.ImageField(upload_to='images')
-    admission_date=models.DateTimeField(auto_now=False, auto_now_add=True,null=True)
-    updated=models.DateTimeField(auto_now=True, auto_now_add=False)
+    # admission_date=models.DateTimeField(auto_now=False, auto_now_add=True,null=True)
+    # updated=models.DateTimeField(auto_now=True, auto_now_add=False)
     discharge=models.BooleanField(default=False)
 
 

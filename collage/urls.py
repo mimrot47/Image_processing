@@ -23,7 +23,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.Home),
     path('pateint/',views.patint),
+    path('insert/',views.insert),
+    path('info/<int:id>',views.info),
     path('accounts/',include('django.contrib.auth.urls')),
+    path('signup/',views.signup_view)
 ]
 urlpatterns += static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT

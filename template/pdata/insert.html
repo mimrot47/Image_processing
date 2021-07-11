@@ -1,0 +1,109 @@
+{% extends '../base.html' %}
+{% block rk %}
+<nav class="navbar navbar-expand-lg text-white mt-5 fixed-top text-center" style="background-color: #9966ff;">
+ <div class="container-fluid">
+    <a class="navbar-brand text-white" href="#">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" href="#">Add Pataint</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active text-white" href="#">Update Report</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+      </ul>
+      <span class="navbar-text">
+        <a class="btn btn-warning" href="../accounts/logout">Logout</a>
+      </span>
+    </div>
+  </div>
+</nav>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container-fluid">
+<table class="table mt-4 ">
+<form action="" method="POST" enctype="multipart/form-data" >
+{% csrf_token %}
+ <thead>
+    <tr>
+      <th scope="col" colspan=6 class="text-center text-white bg-success">Create Pataint Report</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">Ward No</td>
+      <td>{{FORM.ward_no}}</td>
+      <td>Bed No</td>
+      <td>{{FORM.bed_no}}</td>
+      <td>Dector Name</td>
+      <td>{{FORM.Dr_name}}</td>
+    </tr>
+    <tr>
+      <td scope="row">Name</td>
+      <td>{{FORM.P_name}}</td>
+      <td>Gender</td>
+      <td>{{FORM.p_gender}}</td>
+      <td>Age</td>
+      <td>{{FORM.p_age}}</td>
+    </tr>
+     <tr>
+      <td scope="row">Primary repoert</td>
+      <td>{{FORM.p_report}}</td>
+      <td>Blood Preshar</td>
+      <td>{{FORM.blood_preshar}}</td>
+      <td>Oxigen Level</td>
+      <td>{{FORM.Oxigen_leval}}</td>
+    </tr>
+    <tr>
+    </tr>
+     <tr>
+      <td scope="row">Ventiletor</td>
+      <td>{{FORM.Ventilator}}</td>
+      <td>Remdesiver Does</td>
+      <td>{{FORM.Rendesiver_dose}}</td>
+      <td>Eye Infection</td>
+      <td>{{FORM.Eye_infection}}</td>
+    </tr>
+    <tr>
+      <td scope="row">HRCT Report</td>
+      <td>{{FORM.P_HRCT}}</td>
+      <td>CRP Report </td>
+      <td>{{FORM.P_CRP}}</td>
+      <td>Covid Report</td>
+      <td>{{FORM.p_covid}}</td>
+    </tr>
+     <tr>
+      <td scope="row">Covid Percentage</td>
+      <td>{{FORM.P_per}}</td>
+      <td>X-ray Image </td>
+      <td>{{FORM.P_x_image}}</td>
+      <td>Discharge</td>
+      <td>{{FORM.discharge}}</td>
+    </tr>
+     <tr>
+      <td scope="row" class="text-center" colspan="6" ><input type="submit" value="Save Data" class="btn btn-success"></td>
+    </tr>
+  </tbody>
+</table>
+</form> 
+</div>
+
+
+{% comment %} {{FORM.as_p}} {% endcomment %}
+{% endblock rk %}
+
+
+
+
+
+
+

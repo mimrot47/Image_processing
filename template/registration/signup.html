@@ -1,0 +1,16 @@
+{% extends '../base.html' %}
+{% block rk %}
+<br>
+<center>
+<form class="mt-5 p-3" style="border:1px solid blue;width:400px; border-radius: 10px;" action="" method="POST">
+<h5 class="alert alert-info">Signup</h5>
+{% csrf_token %}
+{{form.as_p}}
+<input class="btn btn-success" type="submit" Value="Signup" >
+<a class="btn btn-primary m-3" href="../">Login</a>
+</form>
+</cemter>
+
+{% endblock rk %}
+
+
